@@ -4,7 +4,6 @@ import { useAuth } from "../../context/AuthContext";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
-// Ícone Google SVG inline
 function GoogleIcon() {
   return (
     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -16,7 +15,6 @@ function GoogleIcon() {
   );
 }
 
-// Ícone de trajetória (logo JobPilot)
 function PilotIcon() {
   return (
     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -56,13 +54,11 @@ export default function LoginPage() {
   };
 
   const handleGoogleLogin = () => {
-    // Redireciona para o endpoint de OAuth do backend
     window.location.href = "http://localhost:8000/api/auth/google/login";
   };
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-[#F7F8FC] dark:bg-[#0A0A0F] px-4">
-      {/* Fundo decorativo */}
       <div
         aria-hidden
         className="pointer-events-none fixed inset-0 overflow-hidden"
@@ -72,10 +68,8 @@ export default function LoginPage() {
       </div>
 
       <div className="relative w-full max-w-[400px]">
-        {/* Card */}
         <div className="bg-white dark:bg-zinc-900 rounded-2xl border border-zinc-200/80 dark:border-zinc-800 shadow-xl shadow-zinc-200/50 dark:shadow-black/40 p-8">
 
-          {/* Logo + Brand */}
           <div className="flex items-center gap-2.5 mb-8">
             <PilotIcon />
             <span className="text-lg font-bold text-zinc-900 dark:text-white tracking-tight">
@@ -83,7 +77,6 @@ export default function LoginPage() {
             </span>
           </div>
 
-          {/* Título */}
           <div className="mb-6">
             <h1 className="text-2xl font-semibold text-zinc-900 dark:text-white">
               Bem-vindo de volta
@@ -93,7 +86,6 @@ export default function LoginPage() {
             </p>
           </div>
 
-          {/* Google OAuth */}
           <button
             type="button"
             onClick={handleGoogleLogin}
@@ -103,7 +95,6 @@ export default function LoginPage() {
             Continuar com Google
           </button>
 
-          {/* Divisor */}
           <div className="relative my-6">
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t border-zinc-200 dark:border-zinc-800" />
@@ -115,7 +106,6 @@ export default function LoginPage() {
             </div>
           </div>
 
-          {/* Formulário */}
           <form onSubmit={handleSubmit} className="space-y-3">
             <div>
               <label className="block text-xs font-medium text-zinc-600 dark:text-zinc-400 mb-1.5">
@@ -166,7 +156,6 @@ export default function LoginPage() {
               </div>
             </div>
 
-            {/* Mensagem de erro */}
             {error && (
               <div className="flex items-center gap-2 p-3 rounded-lg bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-900">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-red-500 shrink-0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
@@ -190,7 +179,6 @@ export default function LoginPage() {
             </button>
           </form>
 
-          {/* Link Registro */}
           <p className="text-center text-sm text-zinc-500 dark:text-zinc-400 mt-5">
             Não tem uma conta?{" "}
             <Link href="/register" className="text-indigo-600 dark:text-indigo-400 font-medium hover:underline">
@@ -199,7 +187,6 @@ export default function LoginPage() {
           </p>
         </div>
 
-        {/* Rodapé */}
         <p className="text-center text-xs text-zinc-400 mt-5">
           Ao entrar, você concorda com nossos{" "}
           <Link href="/terms" className="hover:underline">Termos</Link> e{" "}
